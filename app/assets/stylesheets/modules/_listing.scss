@@ -1,0 +1,14 @@
+.m-listings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.m-listings__listing {
+  margin: 1em auto;
+}
+
+.m-listing__image {
+  width: 100%;
+}

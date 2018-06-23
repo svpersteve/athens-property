@@ -1,12 +1,13 @@
 <div class='m-page-width'>
-
-  <% if current_lister.present? %>
-
-  <% else %>
-    <h1>Find the best tenant</h1>
-    <p>Lorem ipsum dolor amet air plant wolf 3 wolf moon, single-origin coffee DIY vice lumbersexual pickled knausgaard pop-up cornhole ennui kinfolk venmo.</p>
-
-    <p>Microdosing offal iPhone, vape cornhole iceland small batch hot chicken affogato portland celiac aesthetic.</p>
-  <% end %>
-
+  <h2>Apartments in Kypseli</h2>
+  <div class='m-listings'>
+    <% @rental_listings.each do |listing| %>
+      <%= link_to listing, class: 'm-listings__listing' do %>
+        <img class='m-listing__image' src='https://images.unsplash.com/photo-1438954936179-786078772609?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=12d852f2323cf9db4ede2034e4b37da5&auto=format&fit=crop&w=2701&q=80' alt=''/>
+        <h2>€<%= listing.price %></h2>
+        <h3>Apartment in <%= listing.zip_code %></h3>
+        <p><%= listing.bedrooms %> bed | <%= listing.size_in_metre_square %>m<sup>2</sup></p>
+      <% end %>
+    <% end %>
+  </div>
 </div>

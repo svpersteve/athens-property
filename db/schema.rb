@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_23_180223) do
+ActiveRecord::Schema.define(version: 2018_06_23_185255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,4 +32,20 @@ ActiveRecord::Schema.define(version: 2018_06_23_180223) do
     t.index ["reset_password_token"], name: "index_listers_on_reset_password_token", unique: true
   end
 
+  create_table "rental_listings", force: :cascade do |t|
+    t.bigint "lister_id", null: false
+    t.integer "price", null: false
+    t.integer "bedrooms", null: false
+    t.integer "bathrooms", null: false
+    t.integer "size_in_metre_square", null: false
+    t.text "description_gr", null: false
+    t.text "description_en", null: false
+    t.integer "telephone", null: false
+    t.integer "zip_code", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lister_id"], name: "index_rental_listings_on_lister_id"
+  end
+
+  add_foreign_key "rental_listings", "listers"
 end

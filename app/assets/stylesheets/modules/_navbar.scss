@@ -1,0 +1,16 @@
+.m-navbar {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1px $colour-border;
+
+  a {
+    padding: 1em;
+  }
+}
+
+.m-navbar__logo {
+  font-size: 1.5em;
+}

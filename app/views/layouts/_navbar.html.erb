@@ -1,3 +1,8 @@
 <nav class='m-navbar'>
   <%= link_to 'Athens Property', root_path, class: 'm-navbar__logo' %>
+  <% if current_lister.present? %>
+    <%= link_to 'Sign out', destroy_lister_session_path, method: :delete %>
+  <% else %>
+    <%= link_to 'Sign in', new_lister_session_path %>
+  <% end %>
 </nav>
